@@ -1,0 +1,5 @@
+export const homeLoader = async ({ params }) => {
+  const res = await fetch(`/api/users/${params.userId}`);
+  if (!res.ok) throw new Error("User not found");
+  return res.json();
+};
