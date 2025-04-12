@@ -1,14 +1,16 @@
-import { Loader } from "@/components";
-import { homeLoader } from "@/pages/home/homeLoader";
+import { Loader } from "@/components/common";
+import { Layout } from "@/components/common/Layout";
+import { ROUTE } from "@/constants/route";
 import { lazy, Suspense } from "react";
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 // Lazy load pages
-const Home = lazy(() => import("../pages/home/HomePage"));
+const HomePage = lazy(() => import("../pages/home/HomePage"));
+const SearchPage = lazy(() => import("../pages/search/SearchPage"));
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: ROUTE.HOME,
     element: (
       <Suspense
         fallback={
@@ -17,14 +19,17 @@ export const router = createBrowserRouter([
           </div>
         }
       >
-        {<Outlet />}
+        <Layout />
       </Suspense>
     ),
     children: [
       {
         index: true,
-        element: <Home />,
-        // loader: homeLoader,
+        element: <HomePage />,
+      },
+      {
+        path: ROUTE.SEARCH,
+        element: <SearchPage />,
       },
     ],
   },
