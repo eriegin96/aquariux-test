@@ -1,5 +1,5 @@
 import axiosClient from "@/configs/axios";
-import { API_KEY, API_ROUTE } from "../constants";
+import { API_KEY, API_ROUTE, DEFAULT_REQUEST_UNITS } from "../constants";
 import { useQuery } from "@tanstack/react-query";
 import { T5Day3HourResponse, TWeatherUnits } from "../types";
 
@@ -15,7 +15,7 @@ export const get5Day3Hour = async (
   const response = await axiosClient.get(API_ROUTE["5DAY_3HOUR"], {
     params: {
       ...params,
-      units: params.units ?? "metric",
+      units: params.units ?? DEFAULT_REQUEST_UNITS,
       appId: import.meta.env.VITE_OPEN_WEATHER_API_KEY,
     },
   });

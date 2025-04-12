@@ -17,12 +17,14 @@ export const ForecastCard = memo(function ForecastCard({
   data,
   isLoading,
 }: TForecastCardProps) {
-  if (isLoading) return;
-  <>
-    {Array.from({ length: 5 }).map((_, index) => (
-      <Skeleton key={index} className="w-full h-52 my-4" />
-    ))}
-  </>;
+  if (isLoading)
+    return (
+      <div className="rounded-lg py-6 px-4 border border-gray-300 bg-white w-full">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <Skeleton key={index} className="w-full h-52 my-4" />
+        ))}
+      </div>
+    );
   if (!data)
     return (
       <div className="rounded-lg py-6 px-4 border border-gray-300 bg-white w-full">

@@ -1,4 +1,4 @@
-export type TGeocodingResponse = {
+export type TCoordinateResponse = {
   name: string; // Name of the found location
   local_names: Record<string, string>[]; // Name of the found location in different languages
   lat: number; // Geographical coordinates of the found location (latitude)
