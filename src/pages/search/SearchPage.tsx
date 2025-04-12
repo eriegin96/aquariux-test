@@ -16,10 +16,14 @@ export default function SearchPage() {
         <Button disabled={isLoading}>Search</Button>
       </div>
 
-      <div className="text-2xl text-left w-full py-4">Search Result</div>
+      <div className="text-2xl text-left font-semibold w-full py-4">
+        Search Result
+      </div>
       <SearchResultCard isLoading={isLoading} />
 
-      <div className="text-2xl text-left w-full py-4">Search History</div>
+      <div className="text-2xl text-left font-semibold w-full py-4">
+        Search History
+      </div>
       <HistoryCard />
     </div>
   );
