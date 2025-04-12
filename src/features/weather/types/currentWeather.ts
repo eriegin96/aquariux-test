@@ -20,8 +20,8 @@ export type TCurrentWeatherResponse = Pick<
   rain: TWeatherRain; // Precipitation, mm/h.
   dt: number; // UTC
   sys: {
-    country: Pick<TWeatherCity, "country">;
-    sunrise: Pick<TWeatherCity, "sunrise">;
-    sunset: Pick<TWeatherCity, "sunset">;
+    country: TWeatherCity["country"];
+    sunrise: TWeatherCity["sunrise"];
+    sunset: TWeatherCity["sunset"];
   };
 };

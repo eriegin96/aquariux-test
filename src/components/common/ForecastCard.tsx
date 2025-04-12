@@ -1,5 +1,6 @@
 import { T5Day3HourDetail } from "@/features/weather/types";
 import { formatHour } from "@/lib/dayjs/format";
+import { memo } from "react";
 
 const mockupDetail: T5Day3HourDetail = {
   dt: 1661871600,
@@ -43,7 +44,7 @@ const mockupDetail: T5Day3HourDetail = {
 /* TODO: group by date */
 const mockupList = [mockupDetail, mockupDetail, mockupDetail, mockupDetail];
 
-export function ForecastCard() {
+export const ForecastCard = memo(function ForecastCard() {
   return (
     <div className="rounded-lg p-4 border border-gray-300 bg-white w-full">
       {mockupList.map((weather) => (
@@ -72,4 +73,4 @@ export function ForecastCard() {
       ))}
     </div>
   );
-}
+});
