@@ -45,3 +45,5 @@ export type TWeatherCity = {
   sunrise: number; // Sunrise time, Unix, UTC
   sunset: number; // Sunset time, Unix, UTC
 };
+
+export type TWeatherUnits = "standard" | "metric" | "imperial";

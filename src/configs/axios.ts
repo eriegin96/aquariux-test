@@ -23,7 +23,7 @@ axiosClient.interceptors.request.use(
 // Response interceptor
 axiosClient.interceptors.response.use(
   (response) => {
-    return response.data;
+    return response;
   },
   (error) => {
     const { response } = error;

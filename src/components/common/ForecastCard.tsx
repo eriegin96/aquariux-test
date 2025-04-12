@@ -47,8 +47,8 @@ export function ForecastCard() {
   return (
     <div className="rounded-lg p-4 border border-gray-300 bg-white w-full">
       {mockupList.map((weather) => (
-        <div key={weather.dt}>
-          <span className="text-gray-500">Today</span>
+        <div key={weather.dt} className="mb-4">
+          <div className="text-gray-500 mb-4">Today</div>
           <div className="flex items-center justify-between gap-4">
             <span className="text-md font-semibold">
               {formatHour(weather.dt * 1000)}
