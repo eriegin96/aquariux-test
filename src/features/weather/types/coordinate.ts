@@ -4,5 +4,5 @@ export type TCoordinateResponse = {
   lat: number; // Geographical coordinates of the found location (latitude)
   lon: number; // Geographical coordinates of the found location (longitude)
   country: string; // Country of the found location
-  state: string; // State of the found location
+  state?: string; // State of the found location
 };

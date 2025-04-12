@@ -1,9 +1,16 @@
+import { useGetLocationByCoordinate } from "@/features/weather/api";
 import { useAppStore } from "@/store/appStore";
 import { useEffect } from "react";
 
 export const useGeolocation = () => {
   const geoLocation = useAppStore((state) => state.geoLocation);
   const setGeoLocation = useAppStore((state) => state.setGeoLocation);
+  const setCity = useAppStore((state) => state.setCity);
+
+  const { data } = useGetLocationByCoordinate(geoLocation.loaded, {
+    lat: geoLocation.coordinates.lat,
+    lon: geoLocation.coordinates.lng,
+  });
 
   const onSuccess = (position: GeolocationPosition) => {
     setGeoLocation({
@@ -38,6 +45,14 @@ export const useGeolocation = () => {
 
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
   }, []);
+
+  useEffect(() => {
+    if (data)
+      setCity({
+        cityName: data?.[0].name,
+        countryCode: data?.[0].country,
+      });
+  }, [data, setCity]);
 
   return geoLocation;
 };

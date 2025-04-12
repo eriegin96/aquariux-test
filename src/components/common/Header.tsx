@@ -4,9 +4,7 @@ import { MapPin, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Header() {
-  const {
-    coordinates: { cityName, countryCode },
-  } = useAppStore((state) => state.geoLocation);
+  const geoLocation = useAppStore((state) => state.geoLocation);
 
   return (
     <div className="w-full bg-white flex justify-center">
@@ -14,7 +12,8 @@ export function Header() {
         <Link to={ROUTE.HOME} className="flex gap-2">
           <MapPin />
           <span>
-            {cityName}, {countryCode}
+            {geoLocation.coordinates.cityName},{" "}
+            {geoLocation.coordinates.countryCode}
           </span>
         </Link>
         <Link to={ROUTE.SEARCH}>

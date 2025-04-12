@@ -1,4 +1,4 @@
-import { useGetCoordinateByLocation } from "@/features/weather/api/getCoordinateByLocation";
+import { useGetCoordinateByLocation } from "@/features/weather/api";
 import { useRef } from "react";
 
 export const useSearchPage = () => {
