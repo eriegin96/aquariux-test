@@ -5,12 +5,12 @@ export const useHomePage = () => {
   const geoLocation = useAppStore((state) => state.geoLocation);
 
   const { data: currentWeatherData, isLoading: isLoadingCurrentWeather } =
-    useGetCurrentWeather(geoLocation.loaded, {
+    useGetCurrentWeather(geoLocation.loaded && !geoLocation.error, {
       lat: geoLocation.coordinates.lat,
       lon: geoLocation.coordinates.lng,
     });
   const { data: fiveDay3HourData, isLoading: isLoading5Day3Hour } =
-    useGet5Day3Hour(geoLocation.loaded, {
+    useGet5Day3Hour(geoLocation.loaded && !geoLocation.error, {
       lat: geoLocation.coordinates.lat,
       lon: geoLocation.coordinates.lng,
     });

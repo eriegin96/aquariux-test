@@ -8,13 +8,17 @@ export function Header() {
 
   return (
     <div className="w-full bg-white flex justify-center">
-      <header className="w-md md:w-2xl flex justify-between py-4">
+      <header className="w-sm sm:w-md flex justify-between py-4">
         <Link to={ROUTE.HOME} className="flex gap-2">
           <MapPin />
-          <span>
-            {geoLocation.coordinates.cityName},{" "}
-            {geoLocation.coordinates.countryCode}
-          </span>
+          {geoLocation.coordinates.cityName ? (
+            <span>
+              {geoLocation.coordinates.cityName},{" "}
+              {geoLocation.coordinates.countryCode}
+            </span>
+          ) : (
+            <span>No geolocation</span>
+          )}
         </Link>
         <Link to={ROUTE.SEARCH}>
           <Search />
