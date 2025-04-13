@@ -21,12 +21,11 @@ export function HistoryCard() {
             </div>
             <div className="flex gap-1">
               <Button
-                variant="ghost"
                 onClick={() => handleNavigate({ id, name, country, lat, lon })}
               >
                 <Search />
               </Button>
-              <Button variant="ghost" onClick={() => deleteHistory(id)}>
+              <Button variant="outline" onClick={() => deleteHistory(id)}>
                 <Trash />
               </Button>
             </div>

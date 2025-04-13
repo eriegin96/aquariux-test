@@ -21,7 +21,7 @@ export function Header() {
           )}
         </Link>
         <Link to={ROUTE.SEARCH}>
-          <Search />
+          <Search color="oklch(0.705 0.213 47.604)" />
         </Link>
       </header>
     </div>
