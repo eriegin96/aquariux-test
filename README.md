@@ -1,54 +1,23 @@
-# React + TypeScript + Vite
+# Aquaiux Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+### Current Weather Summary 
+- Display current date, weather icon, temperature, description, humidity, wind speed with arrow degree direction and visibility. 
 
-Currently, two official plugins are available:
+### 5-day forecast by 3 hours 
+- Display the available forecast data with forecast date with 24 hour format, weather icon, max & min temperature and description in every row. 
+- Filter and segregate the forecast data into different days - today and the following days provided by Open Weather API. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Search & history 
+- Display a search input and search history list. 
+- Navigate to the Home page and update the weather details if the search is valid. 
+- Display error message if the search is invalid. 
+- Store the search history in the browser. 
+- Navigate to the Home page and update the weather details when a search history is selected. 
+- Allow search history deletion. 
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## How to run
+- Set up your env file as the example in `.env.example`
+- `yarn` to install dependencies
+- `yarn dev` to start dev server
