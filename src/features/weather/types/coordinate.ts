@@ -6,3 +6,5 @@ export type TCoordinateResponse = {
   country: string; // Country of the found location
   state?: string; // State of the found location
 };
+
+export type TSearchItem = TCoordinateResponse & { id: string };

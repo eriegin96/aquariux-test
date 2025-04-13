@@ -1,5 +1,7 @@
 import { useGetCoordinateByLocation } from "@/features/weather/api";
+import { TSearchItem } from "@/features/weather/types";
 import { useRef } from "react";
+import { v6 as uuid } from "uuid";
 
 export const useSearchPage = () => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -14,5 +16,10 @@ export const useSearchPage = () => {
     mutate(inputRef.current.value);
   };
 
-  return { inputRef, handleSearch, searchResult, isPending };
+  const searchList = searchResult?.map((item) => ({
+    ...item,
+    id: uuid(),
+  })) as TSearchItem[];
+
+  return { inputRef, handleSearch, searchResult: searchList, isPending };
 };

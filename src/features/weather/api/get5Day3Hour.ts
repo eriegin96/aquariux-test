@@ -24,7 +24,7 @@ export const get5Day3Hour = async (
 
 export const useGet5Day3Hour = (locationLoaded: boolean, params: TParams) => {
   return useQuery({
-    queryKey: [API_KEY["5DAY_3HOUR"]],
+    queryKey: [API_KEY["5DAY_3HOUR"], params],
     queryFn: () => get5Day3Hour(params),
     enabled: locationLoaded,
   });

@@ -27,7 +27,7 @@ export const useGetCurrentWeather = (
   params: TParams
 ) => {
   return useQuery({
-    queryKey: [API_KEY.CURRENT],
+    queryKey: [API_KEY.CURRENT, params],
     queryFn: () => getCurrentWeather(params),
     enabled: locationLoaded,
   });

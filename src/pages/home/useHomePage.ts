@@ -3,6 +3,7 @@ import { useAppStore } from "@/store/appStore";
 
 export const useHomePage = () => {
   const geoLocation = useAppStore((state) => state.geoLocation);
+
   const { data: currentWeatherData, isLoading: isLoadingCurrentWeather } =
     useGetCurrentWeather(geoLocation.loaded, {
       lat: geoLocation.coordinates.lat,
